@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C1EE48DE21F6CB920033DA81"
                BuildableName = "ByrdStation.framework"
-               BlueprintName = "ByrdStation"
+               BlueprintName = "ByrdStation_macOS"
                ReferencedContainer = "container:ByrdStation.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -44,7 +44,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C1EE48DE21F6CB920033DA81"
             BuildableName = "ByrdStation.framework"
-            BlueprintName = "ByrdStation"
+            BlueprintName = "ByrdStation_macOS"
             ReferencedContainer = "container:ByrdStation.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -66,7 +66,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C1EE48DE21F6CB920033DA81"
             BuildableName = "ByrdStation.framework"
-            BlueprintName = "ByrdStation"
+            BlueprintName = "ByrdStation_macOS"
             ReferencedContainer = "container:ByrdStation.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -84,7 +84,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C1EE48DE21F6CB920033DA81"
             BuildableName = "ByrdStation.framework"
-            BlueprintName = "ByrdStation"
+            BlueprintName = "ByrdStation_macOS"
             ReferencedContainer = "container:ByrdStation.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

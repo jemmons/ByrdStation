@@ -7,13 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C122B56921FE066A007DDCEE /* ByrdStationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EE48FB21F6CD310033DA81 /* ByrdStationTests.swift */; };
+		C122B56B21FE0942007DDCEE /* ByrdStation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1E0351C21FDFC600098780E /* ByrdStation.framework */; };
+		C122B56C21FE0A85007DDCEE /* Manageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EE48FD21F6CD7D0033DA81 /* Manageable.swift */; };
 		C1EE48E921F6CB920033DA81 /* ByrdStation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1EE48DF21F6CB920033DA81 /* ByrdStation.framework */; };
 		C1EE48FC21F6CD310033DA81 /* ByrdStationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EE48FB21F6CD310033DA81 /* ByrdStationTests.swift */; };
 		C1EE48FF21F6CE1C0033DA81 /* Manageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EE48FD21F6CD7D0033DA81 /* Manageable.swift */; };
-		C1EE490121F6D0070033DA81 /* ManageableHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EE490021F6D0070033DA81 /* ManageableHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		C122B56421FE0642007DDCEE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C1EE48D621F6CB920033DA81 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C1E0351B21FDFC600098780E;
+			remoteInfo = ByrdStation_iOS;
+		};
 		C1EE48EA21F6CB920033DA81 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C1EE48D621F6CB920033DA81 /* Project object */;
@@ -24,14 +33,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C122B55E21FE0642007DDCEE /* ByrdStationTests_iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ByrdStationTests_iOS.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1E0351C21FDFC600098780E /* ByrdStation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ByrdStation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1EE48DF21F6CB920033DA81 /* ByrdStation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ByrdStation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1EE48E821F6CB920033DA81 /* ByrdStationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ByrdStationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1EE48FB21F6CD310033DA81 /* ByrdStationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ByrdStationTests.swift; sourceTree = "<group>"; };
 		C1EE48FD21F6CD7D0033DA81 /* Manageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manageable.swift; sourceTree = "<group>"; };
-		C1EE490021F6D0070033DA81 /* ManageableHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageableHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C122B55B21FE0642007DDCEE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C122B56B21FE0942007DDCEE /* ByrdStation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1E0351921FDFC600098780E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C1EE48DC21F6CB920033DA81 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -50,12 +75,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C122B56A21FE0942007DDCEE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C1EE48D521F6CB920033DA81 = {
 			isa = PBXGroup;
 			children = (
 				C1EE48F921F6CCDE0033DA81 /* Sources */,
 				C1EE48FA21F6CD050033DA81 /* Tests */,
 				C1EE48E021F6CB920033DA81 /* Products */,
+				C122B56A21FE0942007DDCEE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +97,8 @@
 			children = (
 				C1EE48DF21F6CB920033DA81 /* ByrdStation.framework */,
 				C1EE48E821F6CB920033DA81 /* ByrdStationTests.xctest */,
+				C1E0351C21FDFC600098780E /* ByrdStation.framework */,
+				C122B55E21FE0642007DDCEE /* ByrdStationTests_iOS.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -72,7 +107,6 @@
 			isa = PBXGroup;
 			children = (
 				C1EE48FD21F6CD7D0033DA81 /* Manageable.swift */,
-				C1EE490021F6D0070033DA81 /* ManageableHelper.swift */,
 			);
 			name = Sources;
 			path = ../Sources;
@@ -90,6 +124,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		C1E0351721FDFC600098780E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C1EE48DA21F6CB920033DA81 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -100,9 +141,45 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		C1EE48DE21F6CB920033DA81 /* ByrdStation */ = {
+		C122B55D21FE0642007DDCEE /* ByrdStationTests_iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C1EE48F321F6CB920033DA81 /* Build configuration list for PBXNativeTarget "ByrdStation" */;
+			buildConfigurationList = C122B56821FE0642007DDCEE /* Build configuration list for PBXNativeTarget "ByrdStationTests_iOS" */;
+			buildPhases = (
+				C122B55A21FE0642007DDCEE /* Sources */,
+				C122B55B21FE0642007DDCEE /* Frameworks */,
+				C122B55C21FE0642007DDCEE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C122B56521FE0642007DDCEE /* PBXTargetDependency */,
+			);
+			name = ByrdStationTests_iOS;
+			productName = ByrdStationTests_iOS;
+			productReference = C122B55E21FE0642007DDCEE /* ByrdStationTests_iOS.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C1E0351B21FDFC600098780E /* ByrdStation_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C1E0352121FDFC600098780E /* Build configuration list for PBXNativeTarget "ByrdStation_iOS" */;
+			buildPhases = (
+				C1E0351721FDFC600098780E /* Headers */,
+				C1E0351821FDFC600098780E /* Sources */,
+				C1E0351921FDFC600098780E /* Frameworks */,
+				C1E0351A21FDFC600098780E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ByrdStation_iOS;
+			productName = ByrdStation_iOS;
+			productReference = C1E0351C21FDFC600098780E /* ByrdStation.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C1EE48DE21F6CB920033DA81 /* ByrdStation_macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C1EE48F321F6CB920033DA81 /* Build configuration list for PBXNativeTarget "ByrdStation_macOS" */;
 			buildPhases = (
 				C1EE48DA21F6CB920033DA81 /* Headers */,
 				C1EE48DB21F6CB920033DA81 /* Sources */,
@@ -113,7 +190,7 @@
 			);
 			dependencies = (
 			);
-			name = ByrdStation;
+			name = ByrdStation_macOS;
 			productName = ByrdStation;
 			productReference = C1EE48DF21F6CB920033DA81 /* ByrdStation.framework */;
 			productType = "com.apple.product-type.framework";
@@ -146,6 +223,12 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = MCMXCIX;
 				TargetAttributes = {
+					C122B55D21FE0642007DDCEE = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					C1E0351B21FDFC600098780E = {
+						CreatedOnToolsVersion = 10.1;
+					};
 					C1EE48DE21F6CB920033DA81 = {
 						CreatedOnToolsVersion = 10.1;
 					};
@@ -167,13 +250,29 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C1EE48DE21F6CB920033DA81 /* ByrdStation */,
+				C1E0351B21FDFC600098780E /* ByrdStation_iOS */,
+				C122B55D21FE0642007DDCEE /* ByrdStationTests_iOS */,
+				C1EE48DE21F6CB920033DA81 /* ByrdStation_macOS */,
 				C1EE48E721F6CB920033DA81 /* ByrdStationTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C122B55C21FE0642007DDCEE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1E0351A21FDFC600098780E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C1EE48DD21F6CB920033DA81 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -191,6 +290,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C122B55A21FE0642007DDCEE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C122B56921FE066A007DDCEE /* ByrdStationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1E0351821FDFC600098780E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C122B56C21FE0A85007DDCEE /* Manageable.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C1EE48DB21F6CB920033DA81 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -203,7 +318,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1EE490121F6D0070033DA81 /* ManageableHelper.swift in Sources */,
 				C1EE48FC21F6CD310033DA81 /* ByrdStationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,14 +325,119 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		C122B56521FE0642007DDCEE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C1E0351B21FDFC600098780E /* ByrdStation_iOS */;
+			targetProxy = C122B56421FE0642007DDCEE /* PBXContainerItemProxy */;
+		};
 		C1EE48EB21F6CB920033DA81 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C1EE48DE21F6CB920033DA81 /* ByrdStation */;
+			target = C1EE48DE21F6CB920033DA81 /* ByrdStation_macOS */;
 			targetProxy = C1EE48EA21F6CB920033DA81 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		C122B56621FE0642007DDCEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D4565GL3HE;
+				INFOPLIST_FILE = "Info-Tests.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mcmxcix.ByrdStationTests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C122B56721FE0642007DDCEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D4565GL3HE;
+				INFOPLIST_FILE = "Info-Tests.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mcmxcix.ByrdStationTests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C1E0352221FDFC600098780E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mcmxcix.ByrdStation;
+				PRODUCT_NAME = ByrdStation;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C1E0352321FDFC600098780E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mcmxcix.ByrdStation;
+				PRODUCT_NAME = ByrdStation;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		C1EE48F121F6CB920033DA81 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -347,7 +566,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = D4565GL3HE;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -359,8 +578,9 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mcmxcix.ByrdStation;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = ByrdStation;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 			};
@@ -373,7 +593,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = D4565GL3HE;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -385,8 +605,9 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mcmxcix.ByrdStation;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = ByrdStation;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 			};
@@ -436,6 +657,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C122B56821FE0642007DDCEE /* Build configuration list for PBXNativeTarget "ByrdStationTests_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C122B56621FE0642007DDCEE /* Debug */,
+				C122B56721FE0642007DDCEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C1E0352121FDFC600098780E /* Build configuration list for PBXNativeTarget "ByrdStation_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C1E0352221FDFC600098780E /* Debug */,
+				C1E0352321FDFC600098780E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C1EE48D921F6CB920033DA81 /* Build configuration list for PBXProject "ByrdStation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -445,7 +684,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C1EE48F321F6CB920033DA81 /* Build configuration list for PBXNativeTarget "ByrdStation" */ = {
+		C1EE48F321F6CB920033DA81 /* Build configuration list for PBXNativeTarget "ByrdStation_macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C1EE48F421F6CB920033DA81 /* Debug */,
