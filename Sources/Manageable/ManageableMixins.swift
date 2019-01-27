@@ -11,14 +11,17 @@ public extension Manageable {
   }
   
   
-  static func resultsController<T>(fetchRequest: NSFetchRequest<T>, context moc: NSManagedObjectContext, delegate: NSFetchedResultsControllerDelegate?) -> NSFetchedResultsController<T> where T: NSFetchRequestResult{
-    let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: moc, sectionNameKeyPath: nil, cacheName: nil)
+  static func resultsController(context moc: NSManagedObjectContext, delegate: NSFetchedResultsControllerDelegate?) -> NSFetchedResultsController<Self> {
+    let frc = NSFetchedResultsController(fetchRequest: request(), managedObjectContext: moc, sectionNameKeyPath: nil, cacheName: nil)
     frc.delegate = delegate
     return frc
   }
-  
-  
-  @discardableResult static func insert<T>(name: String, context moc: NSManagedObjectContext) -> T where T: NSManagedObject{
-    return NSEntityDescription.insertNewObject(forEntityName: name, into: moc) as! T
+}
+
+
+
+public extension Manageable where Self: NSManagedObject {
+  @discardableResult static func insert(context moc: NSManagedObjectContext) -> Self {
+    return NSEntityDescription.insertNewObject(forEntityName: entityName, into: moc) as! Self
   }
 }

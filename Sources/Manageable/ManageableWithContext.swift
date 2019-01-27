@@ -10,12 +10,15 @@ public protocol ProvidesInternalContext {
 
 
 public extension Manageable where Self: ProvidesInternalContext {
-  static func resultsController<T>(fetchRequest: NSFetchRequest<T>, delegate: NSFetchedResultsControllerDelegate?) -> NSFetchedResultsController<T> where T: NSFetchRequestResult{
-    return resultsController(fetchRequest: fetchRequest, context: _internalContext, delegate: delegate)
+  static func resultsController(delegate: NSFetchedResultsControllerDelegate?) -> NSFetchedResultsController<Self> {
+    return resultsController(context: _internalContext, delegate: delegate)
   }
-  
-  
-  @discardableResult static func insert<T>(name: String) -> T where T: NSManagedObject{
-    return insert(name: name, context: _internalContext)
+}
+
+
+
+public extension Manageable where Self: ProvidesInternalContext, Self: NSManagedObject {
+  @discardableResult static func insert() -> Self {
+    return insert(context: _internalContext)
   }
 }
