@@ -41,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		737F77502207AA8F0078871B /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Package.swift; path = ../Package.swift; sourceTree = "<group>"; };
 		C122B55E21FE0642007DDCEE /* ByrdStationTests_iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ByrdStationTests_iOS.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C122B56F21FE1FDF007DDCEE /* ManageableWithContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageableWithContext.swift; sourceTree = "<group>"; };
 		C122B57221FE206E007DDCEE /* ManageableMixins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageableMixins.swift; sourceTree = "<group>"; };
@@ -116,6 +117,7 @@
 		C1EE48D521F6CB920033DA81 = {
 			isa = PBXGroup;
 			children = (
+				737F77502207AA8F0078871B /* Package.swift */,
 				C1EE48F921F6CCDE0033DA81 /* Sources */,
 				C1EE48FA21F6CD050033DA81 /* Tests */,
 				C1EE48E021F6CB920033DA81 /* Products */,
@@ -199,6 +201,7 @@
 				C1E0351821FDFC600098780E /* Sources */,
 				C1E0351921FDFC600098780E /* Frameworks */,
 				C1E0351A21FDFC600098780E /* Resources */,
+				737F77522207AE7A0078871B /* Lint */,
 			);
 			buildRules = (
 			);
@@ -217,6 +220,7 @@
 				C1EE48DB21F6CB920033DA81 /* Sources */,
 				C1EE48DC21F6CB920033DA81 /* Frameworks */,
 				C1EE48DD21F6CB920033DA81 /* Resources */,
+				737F77532207B3BE0078871B /* Lint */,
 			);
 			buildRules = (
 			);
@@ -320,6 +324,46 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		737F77522207AE7A0078871B /* Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Lint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"${CONFIGURATION}\" == \"Debug\" ]\nthen\nswift run swiftlint --path ../Sources/ --config ../.swiftlint.yml\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		737F77532207B3BE0078871B /* Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Lint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "swift run swiftlint --path ../Sources/ --config ../.swiftlint.yml\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C122B55A21FE0642007DDCEE /* Sources */ = {

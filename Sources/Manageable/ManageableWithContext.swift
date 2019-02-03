@@ -18,7 +18,8 @@ public extension Manageable where Self: ProvidesInternalContext {
 
 
 public extension Manageable where Self: ProvidesInternalContext, Self: NSManagedObject {
-  @discardableResult static func insert() -> Self {
+  @discardableResult
+  static func insert() -> Self {
     return insert(context: _internalContext)
   }
 }

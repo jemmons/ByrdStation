@@ -17,7 +17,10 @@ public class SQLiteContainer<BundleClass> where BundleClass: AnyObject {
 
 public extension SQLiteContainer {
   var context: NSManagedObjectContext {
-    return container!.viewContext
+    guard let someContainer = container else {
+      fatalError("ByrdStation: Attempted to access an unestablished container.")
+    }
+    return someContainer.viewContext
   }
 }
 

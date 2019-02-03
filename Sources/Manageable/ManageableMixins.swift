@@ -21,7 +21,12 @@ public extension Manageable {
 
 
 public extension Manageable where Self: NSManagedObject {
-  @discardableResult static func insert(context moc: NSManagedObjectContext) -> Self {
-    return NSEntityDescription.insertNewObject(forEntityName: entityName, into: moc) as! Self
+  @discardableResult
+  static func insert(context moc: NSManagedObjectContext) -> Self {
+    let newObject = NSEntityDescription.insertNewObject(forEntityName: entityName, into: moc)
+    guard let typedObject = newObject as? Self else {
+      fatalError("Inserted object returned by Core Data (\(type(of: newObject))) does not agree with the model’s type (\(type(of: Self.self))).")
+    }
+    return typedObject
   }
 }
