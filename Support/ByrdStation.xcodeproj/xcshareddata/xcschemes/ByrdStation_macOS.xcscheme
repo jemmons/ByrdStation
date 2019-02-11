@@ -33,8 +33,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C1EE48E721F6CB920033DA81"
-               BuildableName = "ByrdStationTests.xctest"
-               BlueprintName = "ByrdStationTests"
+               BuildableName = "ByrdStationTests_macOS.xctest"
+               BlueprintName = "ByrdStationTests_macOS"
                ReferencedContainer = "container:ByrdStation.xcodeproj">
             </BuildableReference>
          </TestableReference>

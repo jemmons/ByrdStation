@@ -3,13 +3,18 @@ import CoreData
 
 
 
-public class SQLiteContainer<BundleClass> where BundleClass: AnyObject {
+public class SQLiteContainer {
+  private let name: String
+  private let model: NSManagedObjectModel
+
+
   private var container: NSPersistentContainer?
-  private let modelName: String
+  private var establishedPath: URL?
   
   
-  public init(_ modelName: String) {
-    self.modelName = modelName
+  public init(name: String, model: NSManagedObjectModel) {
+    self.name = name
+    self.model = model
   }
 }
 
@@ -28,18 +33,22 @@ public extension SQLiteContainer {
 
 extension SQLiteContainer: Container {
   public func establish(isWritable: Bool) throws {
-    try establish(isWritable: isWritable, storeURL: nil)
+    try establish(isWritable: isWritable, storeURL: FileManager.default.document(named: name).appendingPathExtension("sqlite"))
   }
   
   
-  public func establish(isWritable: Bool, storeURL: URL?) throws {
+  public func establish(isWritable: Bool, storeURL: URL) throws {
     guard container == nil else {
+      #warning("Empty error")
       throw NSError()
     }
-    let description = Helper.makeSyncSQLDescription(name: modelName, url: storeURL, isWritable: isWritable)
-    let modelPath = try Helper.modelPath(name: modelName, bundleClass: BundleClass.self)
-    let newContainer = try Helper.makeContainer(name: modelName, modelPath: modelPath, description: description)
+    let newContainer = NSPersistentContainer(name: name, managedObjectModel: model)
+    newContainer.persistentStoreDescriptions = [
+      Helper.makeSyncSQLDescription(url: storeURL, isWritable: isWritable)
+    ]
     try Helper.syncLoadStore(of: newContainer)
+    
+    establishedPath = storeURL
     container = newContainer
   }
   
@@ -49,35 +58,26 @@ extension SQLiteContainer: Container {
       try context.save()
     }
   }
+  
+  
+  public func delete() throws {
+    guard let path = establishedPath else {
+      #warning("Empty error")
+      throw NSError()
+    }
+    try FileManager.default.removeItem(at: path)
+  }
 }
 
 
 
 private enum Helper {
-  static func modelPath(name: String, bundleClass: AnyClass) throws -> URL {
-    guard let url = Bundle(for: bundleClass.self).url(forResource: name, withExtension: "momd") else {
-      throw NSError()
-    }
-    return url
-  }
-  
-  
-  static func makeSyncSQLDescription(name: String, url: URL?, isWritable: Bool) -> NSPersistentStoreDescription {
-    let storeDescription = NSPersistentStoreDescription(url: url ?? makeDocumentURL(name: name))
+  static func makeSyncSQLDescription(url: URL, isWritable: Bool) -> NSPersistentStoreDescription {
+    let storeDescription = NSPersistentStoreDescription(url: url)
     storeDescription.type = NSSQLiteStoreType
     storeDescription.isReadOnly = !isWritable
     storeDescription.shouldAddStoreAsynchronously = false
     return storeDescription
-  }
-  
-  
-  static func makeContainer(name: String, modelPath: URL, description: NSPersistentStoreDescription) throws -> NSPersistentContainer {
-    guard let mom = NSManagedObjectModel(contentsOf: modelPath) else {
-      throw NSError()
-    }
-    let container = NSPersistentContainer(name: name, managedObjectModel: mom)
-    container.persistentStoreDescriptions = [description]
-    return container
   }
   
   
@@ -95,13 +95,5 @@ private enum Helper {
     if let e = error {
       throw e
     }
-  }
-  
-  
-  private static func makeDocumentURL(name: String) -> URL {
-    guard let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
-      fatalError("Unable to find document directory.")
-    }
-    return url.appendingPathComponent("\(name).sqlite")
   }
 }
